@@ -36,6 +36,7 @@ tracker_store:
     url: mongodb://mongodb.mongodb.svc.cluster.local:27017
     db: bf
     username: admin
+    auth_source: bf
     password: sistas_1
     collection: chatbot
 
