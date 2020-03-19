@@ -31,7 +31,7 @@ action_endpoint:
 #    username: <username used for authentication>
 #    password: <password used for authentication>
 
-#tracker_store:
+tracker_store:
     type: mongod
     url: mongodb.mongodb.svc.cluster.local:27017
     db: df
