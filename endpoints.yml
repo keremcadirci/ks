@@ -32,12 +32,12 @@ action_endpoint:
 #    password: <password used for authentication>
 
 #tracker_store:
-#    type: mongod
-#    url: localhost:27017
-#    db: rasaSistas
-#    username:
-#    password:
-#    collection: 'conversations'
+    type: mongod
+    url: mongodb.mongodb.svc.cluster.local:27017
+    db: df
+    username: admin
+    password: sistas_1
+    collection: 'chatbot'
 
 #tracker_store:
 #    type: SQL
@@ -49,14 +49,14 @@ action_endpoint:
 #    password: sistas_1
     
     
-tracker_store:
-    type: SQL
-    dialect: "mysql"  # the dialect used to interact with the db
-    #url: "mysql://root:example@mysql:3306/rasa"  # (optional) host of the sql db
-    url: "mysql://mysql.mysql.svc.cluster.local:3306"
-    db: chatbot  # path to your db
-    username:  admin # username used for authentication
-    password:  sistas_1 # password used for authentication    
+#tracker_store:
+#    type: SQL
+#    dialect: "mysql"  # the dialect used to interact with the db
+#    #url: "mysql://root:example@mysql:3306/rasa"  # (optional) host of the sql db
+#    url: "mysql://mysql.mysql.svc.cluster.local:3306"
+#    db: chatbot  # path to your db
+#    username:  admin # username used for authentication
+#    password:  sistas_1 # password used for authentication    
 
 
 # Event broker which all conversation events should be streamed to.
