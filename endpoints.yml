@@ -33,7 +33,7 @@ action_endpoint:
 
 tracker_store:
     type: mongod
-    url: mongodb://mongodb.mongodb.svc.cluster.local:27017
+    url: mongodb://mongodb.mongodb.svc.cluste.local:27017
     db: bf
     username: admin
     password: sistas_1
