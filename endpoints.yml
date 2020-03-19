@@ -33,11 +33,11 @@ action_endpoint:
 
 tracker_store:
     type: mongod
-    url: mongodb.mongodb.svc.cluster.local:27017
+    url: mongodb://mongodb.mongodb.svc.cluster.local:27017
     db: df
     username: admin
     password: sistas_1
-    collection: 'chatbot'
+    collection: chatbot
 
 #tracker_store:
 #    type: SQL
