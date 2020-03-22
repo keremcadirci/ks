@@ -1,0 +1,70 @@
+# This file contains the different endpoints your bot can use.
+
+# Server where the models are pulled from.
+# https://rasa.com/docs/rasa/user-guide/running-the-server/#fetching-models-from-a-server/
+
+#models:
+#  url: http://my-server.com/models/default_core@latest
+#  wait_time_between_pulls:  10   # [optional](default: 100)
+
+# Server which runs your custom actions.
+# https://rasa.com/docs/rasa/core/actions/#custom-actions/
+
+action_endpoint:
+  url: "http://rasa-dev-actions.chatbot.svc.cluster.local:5055/webhook"
+
+# Tracker store which is used to store the conversations.
+# By default the conversations are stored in memory.
+# https://rasa.com/docs/rasa/api/tracker-stores/
+
+#tracker_store:
+#    type: redis
+#    url: <host of the redis instance, e.g. localhost>
+#    port: <port of your redis instance, usually 6379>
+#    db: <number of your database within redis, e.g. 0>
+#    password: <password used for authentication>
+
+#tracker_store:
+#    type: mongod
+#    url: <url to your mongo instance, e.g. mongodb://localhost:27017>
+#    db: <name of the db within your mongo instance, e.g. rasa>
+#    username: <username used for authentication>
+#    password: <password used for authentication>
+
+tracker_store:
+    type: mongod
+    url: mongodb://mongodb.mongodb.svc.cluster.local:27017
+    db: bf
+    username: admin
+    auth_source: bf
+    password: sistas_1
+    collection: chatbot
+
+#tracker_store:
+#    type: SQL
+#    dialect: mssql+pymssql
+#    url: mssql-linux.mssql-linux.svc.cluster.local
+#    port: 1433
+#    db: chatbot
+#    username: sa
+#    password: sistas_1
+    
+    
+#tracker_store:
+#    type: SQL
+#    dialect: "mysql"  # the dialect used to interact with the db
+#    #url: "mysql://root:example@mysql:3306/rasa"  # (optional) host of the sql db
+#    url: "mysql://mysql.mysql.svc.cluster.local:3306"
+#    db: chatbot  # path to your db
+#    username:  admin # username used for authentication
+#    password:  sistas_1 # password used for authentication    
+
+
+# Event broker which all conversation events should be streamed to.
+# https://rasa.com/docs/rasa/api/event-brokers/
+
+#event_broker:
+#  url: localhost
+#  username: username
+#  password: password
+#  queue: queue
