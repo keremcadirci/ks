@@ -3,7 +3,7 @@
   "realm": "sistas",
   "displayName": "Sistaş",
   "displayNameHtml": "<div class=\"kc-logo-text\"><span>SİSTAŞ</span></div>",
-  "notBefore": 1559136909,
+  "notBefore": 1586332885,
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
   "accessTokenLifespan": 28800,
@@ -101,6 +101,15 @@
         "attributes": {}
       },
       {
+        "id": "a5b18f58-8d29-44c7-b934-76d57c2c230d",
+        "name": "ROLE_MONITOR_REAL_TIME",
+        "description": "Chatbot -> Access to monitor conversations in real-time.",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "sistas",
+        "attributes": {}
+      },
+      {
         "id": "89864c38-5574-433c-a428-65b860c31ba8",
         "name": "ROLE_OPERATOR",
         "description": "Operator has access right to Agent, Device and other call search screens for SistasVoice",
@@ -121,6 +130,15 @@
       {
         "id": "ccebb634-87df-4428-b245-ac7e3716cb82",
         "name": "ROLE_TENANT_ADMIN",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "sistas",
+        "attributes": {}
+      },
+      {
+        "id": "7fa30a32-fc5d-48d0-9637-aa83945ce15f",
+        "name": "ROLE_MONITOR_HISTORICAL",
+        "description": "Chatbot -> Access to monitor conversation history.",
         "composite": false,
         "clientRole": false,
         "containerId": "sistas",
@@ -222,6 +240,42 @@
         "attributes": {}
       },
       {
+        "id": "3dd59611-75b5-41f5-9a0e-41f49dbea1a5",
+        "name": "ROLE_INCOMING_MESSAGE_EXPORT",
+        "description": "Chatbot -> Access to export incoming messages with extra features of conversations.",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "sistas",
+        "attributes": {}
+      },
+      {
+        "id": "8b4623cc-ccb0-47b4-b157-d6871c0c5719",
+        "name": "ROLE_MONITOR_FORCE_REDIRECT",
+        "description": "Chatbot -> Ability to change comsumption channel of a conversation. (Bot -> Agent, Agent -> Bot)",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "sistas",
+        "attributes": {}
+      },
+      {
+        "id": "0e5dbc36-248f-4c2e-a3f1-3a83090aabb2",
+        "name": "ROLE_INCOMING_MESSAGE_READ",
+        "description": "Chatbot -> Access to read incoming messages with extra features of conversations.",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "sistas",
+        "attributes": {}
+      },
+      {
+        "id": "fddd7dcf-5797-4d66-b4c5-6dbd57e97feb",
+        "name": "ROLE_DASHBOARD_READ",
+        "description": "Chatbot -> Access to monitor dashboard.",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "sistas",
+        "attributes": {}
+      },
+      {
         "id": "64a9dd2a-f21d-4a14-a25f-5fc7ad1a20de",
         "name": "ROLE_AGENT",
         "description": "Sistas Voice Recorder Agent Role",
@@ -301,7 +355,7 @@
     "client": {
       "chatbot": [
         {
-          "id": "e0bb12ea-c750-412e-ac88-fd5e40da5c8a",
+          "id": "cdc72d91-af65-4c15-80ef-f778e1012ff5",
           "name": "uma_protection",
           "composite": false,
           "clientRole": true,
@@ -2294,7 +2348,7 @@
     {
       "id": "f267a815-6b2e-436e-968c-b1c50fd14c42",
       "clientId": "chatbot",
-      "name": "Smart",
+      "name": "Chatbot",
       "rootUrl": "http://localhost:28180",
       "adminUrl": "http://localhost:28080",
       "surrogateAuthRequired": false,
@@ -2304,15 +2358,19 @@
       "redirectUris": [
         "http://localhost:18081/*",
         "http://127.0.0.1:8761/*",
+        "http://192.168.12.181:28081/*",
         "http://localhost:28081/*",
         "*",
+        "http://192.168.12.181:28180/*",
         "http://localhost:9000/*"
       ],
       "webOrigins": [
         "http://127.0.0.1:8761/*",
         "http://localhost:28080/*",
+        "http://192.168.12.181:28081/*",
         "http://localhost:28081/*",
         "*",
+        "http://192.168.12.181:28180/*",
         "http://localhost:9000/*"
       ],
       "notBefore": 0,
@@ -3365,7 +3423,7 @@
           "config": {
             "multivalued": "true",
             "userinfo.token.claim": "true",
-            "id.token.claim": "false",
+            "id.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "roles",
             "jsonType.label": "String"
